@@ -159,6 +159,7 @@ import Game from '../assets/Game.png';
       <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Tech Stack Used</p>
       <h2 id="stackTitle" class="mt-2 text-2xl font-bold text-slate-900">Supply Management Information System (SMIS)</h2>
       <p id="stackSummary" class="mt-2 text-sm text-slate-600">Core technologies used to build the web-based capstone platform.</p>
+      <div id="stackLinks" class="mt-4"></div>
       <div id="stackTags" class="mt-4 flex flex-wrap gap-2"></div>
     </div>
   </div>
@@ -173,17 +174,25 @@ import Game from '../assets/Game.png';
     const stackTitle = document.getElementById('stackTitle');
     const stackSummary = document.getElementById('stackSummary');
     const stackTags = document.getElementById('stackTags');
+    const stackLinks = document.getElementById('stackLinks');
 
     const techStacks = [
       {
         title: 'Supply Management Information System (SMIS)',
         summary: 'Core technologies used to build the web-based capstone platform.',
-        tags: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Laravel', 'MySQL', 'Bootstrap']
+        tags: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Laravel', 'MySQL', 'Bootstrap'],
+          links: [
+{ label: 'View on GitHub', href: 'https://github.com/Azzurra56/SMIS_PUPT-Astral-Angels' }
+        ]
       },
       {
         title: 'Makabre (FPS Horror Game)',
         summary: 'Technologies and tools used for the game experience and pipeline.',
-        tags: ['Unity(For Animation)', 'C#', 'Blender', 'Photoshop', 'FMOD', 'Git']
+        tags: ['Unity(For Animation)', 'C#', 'Blender', 'Photoshop', 'FMOD', 'Git'],
+        links:[
+        {label: "View on Facebook", href: 'https://www.facebook.com/profile.php?id=61561527587082'}
+      ]
+      
       },
       {
         title: 'Upcoming Project',
@@ -197,18 +206,29 @@ import Game from '../assets/Game.png';
 
     const updateStackDetails = (index: number) => {
       const details = techStacks[index];
-      if (!details || !stackTitle || !stackSummary || !stackTags) return;
-
-      stackTitle.textContent = details.title;
-      stackSummary.textContent = details.summary;
-      stackTags.innerHTML = '';
-
-      details.tags.forEach((tag) => {
-        const chip = document.createElement('span');
-        chip.className = 'inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700';
-        chip.textContent = tag;
-        stackTags.appendChild(chip);
-      });
+      if (stackLinks) {
+stackLinks.innerHTML = '';
+(details.links || []).forEach((link) => {
+const a = document.createElement('a');
+a.href = link.href;
+a.target = '_blank';
+a.rel = 'noopener noreferrer';
+a.className = 'font-display text-brand-700 hover:underline';
+a.textContent = link.label;
+stackLinks.appendChild(a);
+});
+}
+      if (stackTitle) stackTitle.textContent = details.title;
+      if (stackSummary) stackSummary.textContent = details.summary;
+      if (stackTags) {
+        stackTags.innerHTML = '';
+        details.tags.forEach((tag) => {
+          const span = document.createElement('span');
+          span.className = 'inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-800';
+          span.textContent = tag;
+          stackTags.appendChild(span);
+        });
+      }
     };
 
     const setActive = (index: number) => {
