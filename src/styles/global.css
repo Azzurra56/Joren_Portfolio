@@ -55,6 +55,28 @@
 --color-brand-900: #172554;
 --color-brand-950: #0b1120;
 
+--bg-neutral-primary-soft:#F8FAFC ;
+--bg-neutral-primary:#E2E8F0 ;
+--border-neutral-border:#CBD5E1 ;
+--text-neutral-primary-bold:#1D4ED8 ;
+
+/* --- NEUTRAL PRIMARY SCALE --- */
+--color-neutral-primary-50: #f8fafc;
+--color-neutral-primary-100: #f1f5f9;
+--color-neutral-primary-200: #e2e8f0;
+--color-neutral-primary-300: #cbd5e1;
+--color-neutral-primary-400: #94a3b8;
+--color-neutral-primary-500: #64748b;
+--color-neutral-primary-600: #475569;
+--color-neutral-primary-700: #334155;
+--color-neutral-primary-800: #1e293b;
+--color-neutral-primary-900: #0f172a;
+--color-neutral-primary-950: #020617;
+
+--bg-neutral-primary-soft-50
+--bg-neutral-primary-soft-100
+--border-neutral-primary-soft-300
+--text-neutral-primary-soft-700
 
 /* --- NEUTRAL QUATERNARY --- */
 --color-neutral-quaternary: #dbe4f0;
