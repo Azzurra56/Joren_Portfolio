@@ -1,4 +1,5 @@
 ---
+import Profile from '../assets/Picture.jpg';
 interface Props {
 	activePath?: string;
 }
@@ -64,13 +65,13 @@ const isActive = (path: string) => activePath.toLowerCase() === path.toLowerCase
 
 		<div class="w-full mt-4 md:mt-0 md:w-auto md:ml-6">
 			<div class="flex items-center gap-3 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 dark:border-gray-700 dark:bg-gray-800">
-				<img class="h-12 w-12 rounded-full object-cover" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile" />
+				<img class="h-12 w-12 rounded-full object-cover" src={Profile.src} alt="Profile" />
 				<div class="min-w-0">
 					<h2 class="truncate text-sm font-narrow text-gray-900 dark:text-white">Dela Cruz, John Clarence A.</h2>
 					<p class="truncate text-xs text-gray-500 dark:text-gray-300">Aspiring Web Developer & Tech Support</p>
 					<div class="mt-1 flex items-center">
 						<span class="h-2 w-2 rounded-full bg-green-500"></span>
-						<span class="ml-2 text-xs text-green-600 dark:text-green-400">Online</span>
+						<span class="ml-2 text-xs text-green-600 dark:text-green-400">Active</span>
 					</div>
 				</div>
 			</div>
