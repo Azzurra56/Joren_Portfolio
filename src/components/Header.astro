@@ -64,7 +64,7 @@ const isActive = (path: string) => activePath.toLowerCase() === path.toLowerCase
 
 		<div class="w-full mt-4 md:mt-0 md:w-auto md:ml-6">
 			<div class="flex items-center gap-3 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 dark:border-gray-700 dark:bg-gray-800">
-				<img id="profileImg" class="h-12 w-12 rounded-full object-cover" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile" />
+				<img class="h-12 w-12 rounded-full object-cover" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile" />
 				<div class="min-w-0">
 					<h2 class="truncate text-sm font-narrow text-gray-900 dark:text-white">Dela Cruz, John Clarence A.</h2>
 					<p class="truncate text-xs text-gray-500 dark:text-gray-300">Aspiring Web Developer & Tech Support</p>
@@ -73,8 +73,6 @@ const isActive = (path: string) => activePath.toLowerCase() === path.toLowerCase
 						<span class="ml-2 text-xs text-green-600 dark:text-green-400">Online</span>
 					</div>
 				</div>
-				<label for="profileUpload" class="cursor-pointer text-xs text-blue-600 hover:underline dark:text-blue-400">Photo</label>
-				<input id="profileUpload" type="file" accept="image/*" class="hidden" />
 			</div>
 		</div>
 	</div>
@@ -93,67 +91,6 @@ const isActive = (path: string) => activePath.toLowerCase() === path.toLowerCase
 			});
 		}
 
-		const profileImg = header.querySelector('#profileImg') as HTMLImageElement | null;
-		const profileUpload = header.querySelector('#profileUpload') as HTMLInputElement | null;
-		const profileKey = 'profileImg';
-		const maxDimension = 512;
-		const jpegQuality = 0.85;
-
-		const loadProfileImg = () => {
-			try {
-				return localStorage.getItem(profileKey);
-			} catch {
-				return null;
-			}
-		};
-
-		const saveProfileImg = (dataUrl: string) => {
-			try {
-				localStorage.setItem(profileKey, dataUrl);
-			} catch (err) {
-				console.warn('Profile image could not be saved to localStorage.', err);
-			}
-		};
-
-		const resizeImage = (dataUrl: string, callback: (compressed: string) => void) => {
-			const img = new Image();
-			img.onload = () => {
-				const scale = Math.min(1, maxDimension / Math.max(img.width, img.height));
-				const canvas = document.createElement('canvas');
-				canvas.width = Math.round(img.width * scale);
-				canvas.height = Math.round(img.height * scale);
-				const ctx = canvas.getContext('2d');
-				if (!ctx) return;
-				ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-				const compressed = canvas.toDataURL('image/jpeg', jpegQuality);
-				callback(compressed);
-			};
-			img.src = dataUrl;
-		};
-
-		if (profileImg && profileUpload) {
-			const savedProfileImg = loadProfileImg();
-			if (savedProfileImg) {
-				profileImg.src = savedProfileImg;
-			}
-
-			profileUpload.addEventListener('change', (e) => {
-				const input = e.target;
-				if (input && input instanceof HTMLInputElement && input.files && input.files[0]) {
-					const file = input.files[0];
-					const reader = new FileReader();
-					reader.onload = function (ev: ProgressEvent<FileReader>) {
-						if (profileImg && ev.target && typeof ev.target.result === 'string') {
-							resizeImage(ev.target.result, (compressed) => {
-								profileImg.src = compressed;
-								saveProfileImg(compressed);
-							});
-						}
-					};
-					reader.readAsDataURL(file);
-				}
-			});
-		}
 	};
 
 	document.addEventListener('DOMContentLoaded', initHeader);
