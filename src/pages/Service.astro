@@ -1,0 +1,130 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Services</title>
+  </head>
+  <body class="min-h-screen bg-white text-gray-900 antialiased">
+    <Header activePath="/Service" />
+
+    <main class="relative overflow-hidden">
+      <div class="pointer-events-none absolute inset-0 -z-10">
+        <div class="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-maroon-100/70 blur-3xl"></div>
+        <div class="absolute top-1/3 -right-28 h-80 w-80 rounded-full bg-gold-100/60 blur-3xl"></div>
+      </div>
+
+      <section class="mx-auto max-w-6xl px-4 pt-12 pb-8 sm:px-6 lg:px-8 lg:pt-16">
+        <span class="inline-flex items-center rounded-full border border-maroon-200 bg-maroon-50 px-3 py-1 text-xs font-bold tracking-[0.18em] text-maroon-700 uppercase">
+          Services
+        </span>
+        <h1 class="mt-5 max-w-3xl font-serif text-3xl leading-tight text-gray-900 sm:text-4xl">
+          Resume-based services focused on IT support, web development, and project delivery.
+        </h1>
+        <p class="mt-4 max-w-3xl text-base leading-8 text-gray-600 sm:text-lg">
+          Graduating BSIT student with DOST-STII internship experience in technical support and live stream operations.
+          I help teams solve technical issues, build web systems, and keep projects organized from planning to deployment.
+        </p>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-4 pb-10 sm:px-6 lg:px-8">
+        <div class="grid gap-6 md:grid-cols-2">
+          <article class="rounded-3xl border border-gray-200 bg-white p-7 shadow-sm">
+            <h2 class="text-2xl font-bold text-gray-900">Education</h2>
+            <p class="mt-4 text-sm leading-7 text-gray-600">
+              Bachelor of Science in Information Technology<br />
+              Polytechnic University of the Philippines - Taguig Campus
+            </p>
+          </article>
+
+          <article class="rounded-3xl border border-gray-200 bg-white p-7 shadow-sm">
+            <h2 class="text-2xl font-bold text-gray-900">Languages</h2>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-maroon-200 bg-maroon-50 px-3 py-1 text-xs font-semibold text-maroon-700">Tagalog (Native)</span>
+              <span class="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">English (Spoken)</span>
+              <span class="rounded-full border border-gold-200 bg-gold-50 px-3 py-1 text-xs font-semibold text-gold-700">Japanese (Beginner)</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-6 grid gap-6 lg:grid-cols-2">
+          <article class="rounded-3xl border border-gray-200 bg-white p-7 shadow-sm">
+            <h2 class="text-2xl font-bold text-gray-900">Technical Skills</h2>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-semibold text-gray-700">Prompt Engineering</span>
+              <span class="rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-semibold text-gray-700">Game QA Testing</span>
+              <span class="rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-semibold text-gray-700">Game Animation</span>
+              <span class="rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-semibold text-gray-700">Project Planning</span>
+              <span class="rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-semibold text-gray-700">Analytical Thinking</span>
+              <span class="rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-semibold text-gray-700">System Troubleshooting</span>
+              <span class="rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-semibold text-gray-700">Laravel + MySQL</span>
+            </div>
+          </article>
+
+          <article class="rounded-3xl border border-gray-200 bg-white p-7 shadow-sm">
+            <h2 class="text-2xl font-bold text-gray-900">Soft Skills</h2>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-maroon-200 bg-maroon-50 px-3 py-1 text-xs font-semibold text-maroon-700">Team Building</span>
+              <span class="rounded-full border border-maroon-200 bg-maroon-50 px-3 py-1 text-xs font-semibold text-maroon-700">Resilience</span>
+              <span class="rounded-full border border-maroon-200 bg-maroon-50 px-3 py-1 text-xs font-semibold text-maroon-700">Attentive Listening</span>
+              <span class="rounded-full border border-maroon-200 bg-maroon-50 px-3 py-1 text-xs font-semibold text-maroon-700">Willingness to Learn</span>
+              <span class="rounded-full border border-maroon-200 bg-maroon-50 px-3 py-1 text-xs font-semibold text-maroon-700">Critical Analysis</span>
+              <span class="rounded-full border border-maroon-200 bg-maroon-50 px-3 py-1 text-xs font-semibold text-maroon-700">Contribution Mindset</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+        <div class="grid gap-6 lg:grid-cols-2">
+          <article class="rounded-3xl border border-gray-200 bg-white p-7 shadow-sm">
+            <h2 class="text-2xl font-bold text-gray-900">Technical Projects</h2>
+            <ul class="mt-5 space-y-4 text-sm leading-7 text-gray-600">
+              <li>
+                <p class="font-semibold text-gray-900">Project Manager | Supply Management Information System (SMIS)</p>
+                <p>Led project direction, requirements checking, and development progression.</p>
+                <p class="text-xs font-semibold text-gray-500">Stack: PHP, Laravel, CSS, HTML, JavaScript, MySQL</p>
+              </li>
+              <li>
+                <p class="font-semibold text-gray-900">Lead Animator, Sound Engineer, Documentation | Makabre (HCI Project)</p>
+                <p>Handled animation flow, game sounds, and project documentation quality.</p>
+                <p class="text-xs font-semibold text-gray-500">Stack: Unity</p>
+              </li>
+              <li>
+                <p class="font-semibold text-gray-900">QA Tester | JULIET FOS C++ Project</p>
+                <p>Performed testing and quality checks for a first-year computer programming project.</p>
+              </li>
+            </ul>
+          </article>
+
+          <article class="rounded-3xl border border-gray-200 bg-white p-7 shadow-sm">
+            <h2 class="text-2xl font-bold text-gray-900">Work and Leadership Experience</h2>
+            <ul class="mt-5 space-y-4 text-sm leading-7 text-gray-600">
+              <li>
+                <p class="font-semibold text-gray-900">Intern, Technical Support and Live Stream Assistant | DOST-STII</p>
+                <p class="text-xs font-semibold text-maroon-700">February 2026 - May 2026</p>
+                <p>Provided comprehensive technical support and troubleshooting for departmental hardware and software.</p>
+              </li>
+              <li>
+                <p class="font-semibold text-gray-900">Apprentice Delegates Representative | Computer Society PUP-T</p>
+                <p class="text-xs font-semibold text-maroon-700">Sep 2022 - June 2024</p>
+                <p>Assisted logistics, reminders, and event tasking for organization operations.</p>
+              </li>
+              <li>
+                <p class="font-semibold text-gray-900">Delegates Representative | Computer Society PUP-T</p>
+                <p class="text-xs font-semibold text-maroon-700">Sep 2024 - June 2025</p>
+                <p>Facilitated admin operations, equipment/resource logistics, and documentation coordination.</p>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+    </main>
+
+  </body>
+</html>

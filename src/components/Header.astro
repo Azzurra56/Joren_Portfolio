@@ -43,10 +43,10 @@ const isActive = (path: string) => activePath.toLowerCase() === path.toLowerCase
 					<a href="/" class={`${baseLinkClass} ${isActive('/') ? activeLinkClass : idleLinkClass}`} aria-current={isActive('/') ? 'page' : undefined}>Home</a>
 				</li>
 				<li>
-					<a href="#" class={`${baseLinkClass} ${idleLinkClass}`}>About</a>
+					<a href="/About" class={`${baseLinkClass} ${idleLinkClass}`}>About</a>
 				</li>
 				<li>
-					<a href="#" class={`${baseLinkClass} ${idleLinkClass}`}>Services</a>
+					<a href="Service" class={`${baseLinkClass} ${idleLinkClass}`}>Services</a>
 				</li>
 				<li>
 					<a href="/Project" class={`${baseLinkClass} ${isActive('/Project') ? activeLinkClass : idleLinkClass}`}>Project</a>
