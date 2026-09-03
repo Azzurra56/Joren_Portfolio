@@ -1,4 +1,220 @@
 @import "tailwindcss";
+
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #111827 !important;
+  color: #e5e7eb !important;
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+html:not(.dark) body {
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes page-enter-left {
+  from {
+    opacity: 0;
+    transform: translate3d(-14px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes page-enter-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+[data-page] main,
+[data-page] > div:not([data-app-header]) {
+  animation: page-enter 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+[data-page="about"] main,
+[data-page="services"] main {
+  animation-name: page-enter-left;
+}
+
+[data-page="project"] > div:not([data-app-header]),
+[data-page="tech"] main {
+  animation-name: page-enter-scale;
+}
+
+[data-page="tech"] .card-reveal {
+  animation-duration: 380ms;
+}
+
+[data-page="work"] main,
+[data-page="contact"] main {
+  animation-duration: 480ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-page] main,
+  [data-page] > div:not([data-app-header]),
+  [data-page="tech"] .card-reveal {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+html.dark nav,
+html.dark .bg-white {
+  background-color: #1e293b !important;
+}
+
+html.dark nav {
+  border-color: #334155 !important;
+}
+
+html.dark nav a,
+html.dark nav a:visited {
+  color: #f3f4f6 !important;
+}
+
+html.dark nav a:hover,
+html.dark nav a:focus-visible {
+  color: #93c5fd !important;
+}
+
+html.dark #theme-moon {
+  display: none;
+}
+
+html.dark #theme-sun {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  html.dark nav ul {
+    background-color: transparent !important;
+  }
+}
+
+html.dark .bg-white\/90,
+html.dark .bg-gray-50\/80 {
+  background-color: rgb(30 41 59 / 0.92) !important;
+}
+
+html.dark .bg-gray-50,
+html.dark .bg-slate-50 {
+  background-color: #172033 !important;
+}
+
+html.dark .bg-gray-100 {
+  background-color: #273449 !important;
+}
+
+html.dark .border-gray-100,
+html.dark .border-gray-200,
+html.dark .border-slate-200,
+html.dark .border-gray-300 {
+  border-color: #3b4a61 !important;
+}
+
+html.dark .text-gray-900,
+html.dark .text-slate-900,
+html.dark .text-slate-800 {
+  color: #f3f4f6 !important;
+}
+
+html.dark .text-gray-700,
+html.dark .text-slate-700 {
+  color: #d1d5db !important;
+}
+
+html.dark .text-gray-800 {
+  color: #e5e7eb !important;
+}
+
+html.dark .text-gray-600,
+html.dark .text-slate-600,
+html.dark .text-gray-500,
+html.dark .text-slate-500 {
+  color: #aeb9c9 !important;
+}
+
+html.dark .text-blue-700,
+html.dark .text-sky-600,
+html.dark .text-brand-700,
+html.dark .text-display-800 {
+  color: #93c5fd !important;
+}
+
+html.dark .text-maroon-600,
+html.dark .text-maroon-700 {
+  color: #f0a3ad !important;
+}
+
+html.dark .text-gold-700 {
+  color: #fcd34d !important;
+}
+
+html.dark .bg-maroon-50 {
+  background-color: #3b2028 !important;
+}
+
+html.dark .border-maroon-100,
+html.dark .border-maroon-200 {
+  border-color: #70404a !important;
+}
+
+html.dark .bg-gold-50 {
+  background-color: #3a3120 !important;
+}
+
+html.dark .from-maroon-50 {
+  --tw-gradient-from: #3b2028 var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgb(59 32 40 / 0) var(--tw-gradient-to-position) !important;
+}
+
+html.dark .via-white {
+  --tw-gradient-to: rgb(30 41 59 / 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), #1e293b var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+
+html.dark .to-gold-50 {
+  --tw-gradient-to: #3a3120 var(--tw-gradient-to-position) !important;
+}
+
+html.dark .border-gold-200 {
+  border-color: #80652a !important;
+}
+
+html.dark input,
+html.dark textarea,
+html.dark select {
+  background-color: #1e293b;
+  border-color: #475569;
+  color: #f3f4f6;
+}
 @theme {
   /* 50 is almost white with a hint of maroon */
   --color-maroon-50: #fdf2f2; 
