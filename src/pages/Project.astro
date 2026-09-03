@@ -262,6 +262,16 @@ stackLinks.appendChild(a);
 
     const next = () => setActive((activeIndex + 1) % slides.length);
     const prev = () => setActive((activeIndex - 1 + slides.length) % slides.length);
+    let autoSlideTimer: number | undefined;
+
+    const startAutoSlide = () => {
+      window.clearInterval(autoSlideTimer);
+      autoSlideTimer = window.setInterval(next, 3000);
+    };
+
+    const stopAutoSlide = () => {
+      window.clearInterval(autoSlideTimer);
+    };
 
     document.querySelectorAll('[data-slide="next"]').forEach((btn) => {
       btn.addEventListener('click', next);
@@ -277,6 +287,15 @@ stackLinks.appendChild(a);
     });
 
     setActive(activeIndex);
+    startAutoSlide();
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stopAutoSlide();
+      } else {
+        startAutoSlide();
+      }
+    });
   });
 </script>
 
