@@ -1,5 +1,4 @@
 @import "tailwindcss";
-<<<<<<< HEAD
 
 html {
   color-scheme: light;
@@ -224,8 +223,6 @@ html.dark select {
   border-color: #475569;
   color: #f3f4f6;
 }
-=======
->>>>>>> parent of f45a5b2 (Dark Mode and ai assist on smooth animations)
 @theme {
   /* 50 is almost white with a hint of maroon */
   --color-maroon-50: #fdf2f2; 
