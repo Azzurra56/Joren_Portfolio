@@ -9,7 +9,7 @@ html.dark {
 }
 
 html.dark body {
-  background-color: #111827 !important;
+  background-color: #1e293b !important;
   color: #e5e7eb !important;
   transition: background-color 250ms ease, color 250ms ease;
 }
@@ -87,6 +87,14 @@ html:not(.dark) body {
 
 html.dark nav,
 html.dark .bg-white {
+  background-color: #1e293b !important;
+}
+
+html.dark [data-app-header] {
+  background-color: #1e293b !important;
+}
+
+html.dark [data-app-header] .bg-gray-50 {
   background-color: #1e293b !important;
 }
 
