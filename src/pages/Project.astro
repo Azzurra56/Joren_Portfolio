@@ -18,7 +18,7 @@ import Game from '../assets/Game.png';
 
 <div
   id="carouselExampleCaptions"
-  class="relative touch-pan-y"
+  class="relative"
   data-carousel>
   <!--Carousel indicators-->
   <div
@@ -175,7 +175,6 @@ import Game from '../assets/Game.png';
     const stackSummary = document.getElementById('stackSummary');
     const stackTags = document.getElementById('stackTags');
     const stackLinks = document.getElementById('stackLinks');
-    const carousel = document.querySelector('[data-carousel]');
 
     const techStacks = [
       {
@@ -273,35 +272,6 @@ stackLinks.appendChild(a);
     const stopAutoSlide = () => {
       window.clearInterval(autoSlideTimer);
     };
-
-    let touchStartX = 0;
-    let touchStartY = 0;
-
-    carousel?.addEventListener('touchstart', (event) => {
-      if (!(event instanceof TouchEvent)) return;
-      const touch = event.touches[0];
-      touchStartX = touch.clientX;
-      touchStartY = touch.clientY;
-      stopAutoSlide();
-    }, { passive: true });
-
-    carousel?.addEventListener('touchend', (event) => {
-      if (!(event instanceof TouchEvent)) return;
-      const touch = event.changedTouches[0];
-      const deltaX = touch.clientX - touchStartX;
-      const deltaY = touch.clientY - touchStartY;
-      const swipeThreshold = 50;
-
-      if (Math.abs(deltaX) >= swipeThreshold && Math.abs(deltaX) > Math.abs(deltaY)) {
-        if (deltaX < 0) {
-          next();
-        } else {
-          prev();
-        }
-      }
-
-      startAutoSlide();
-    }, { passive: true });
 
     document.querySelectorAll('[data-slide="next"]').forEach((btn) => {
       btn.addEventListener('click', next);
